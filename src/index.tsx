@@ -9,16 +9,16 @@ type EmitEvent = {
 export type FabProps = {
   animateType?: LabelAnimation;
   itemLabels?: String[];
-  onTapItem?: (event: EmitEvent) => void;
+  onItemTap?: (event: EmitEvent) => void;
 };
 
 const Fab = requireNativeComponent<FabProps>('DraggableFab');
 
 export enum LabelAnimation {
-  Pop = 'Pop',
-  Fade = 'Fade',
-  SlideLeft = 'Slide Left',
-  SlideUp = 'Slide Up',
+  Pop = 'pop',
+  Fade = 'fade',
+  SlideLeft = 'slideLeft',
+  SlideUp = 'slideUp',
   None = 'none',
 }
 

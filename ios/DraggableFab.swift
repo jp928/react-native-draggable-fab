@@ -10,28 +10,10 @@ class DraggableFab: RCTViewManager, FloatyDelegate {
         floaty.friendlyTap = true
         return floaty
     }
-    
-    //
-    //    func layoutFAB() {
-    //        let item = FloatyItem()
-    //        item.hasShadow = true
-    //        item.buttonColor = UIColor.blue
-    //        item.circleShadowColor = UIColor.red
-    //        item.titleShadowColor = UIColor.blue
-    //        item.titleLabelPosition = .right
-    //        item.title = "titlePosition right"
-    //        item.handler = { item in
-    //
-    //        }
-    //
-    //        floaty.hasShadow = false
-    //        floaty.addItem(title: "I got a title")
-    //        floaty.addItem("I got a icon", icon: UIImage(named: "icShare"))
-    //
-    //        floaty.addItem(item: item)
-    //
-    //    }
-    
+
+    override static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
 }
 
 extension Floaty {    
@@ -62,10 +44,6 @@ extension Floaty {
             }
         }
     }
-
-    
-    
-    // @objc var onUpdate: RCTDirectEventBlock?
     
     private func getAnimateType(type: String?) -> FloatyOpenAnimationType {
         switch type {
