@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import DraggableFab from 'react-native-draggable-fab';
+import Fab from 'react-native-draggable-fab';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    DraggableFab.multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: Hello World</Text>
+      <Fab />
     </View>
   );
 }
