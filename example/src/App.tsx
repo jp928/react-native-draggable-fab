@@ -1,12 +1,23 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Fab from 'react-native-draggable-fab';
+import Fab, { LabelAnimation } from 'react-native-draggable-fab';
 
 export default function App() {
+  const [tappedItem, setTappedItem] = React.useState(0);
+
+  const onTapItem = ({ nativeEvent }) => {
+    console.log(nativeEvent);
+    setTappedItem(nativeEvent.index);
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Result: Hello World</Text>
-      <Fab />
+      <Text>Tapped Item: {tappedItem}</Text>
+      <Fab
+        animateType={LabelAnimation.SlideLeft}
+        itemLabels={['test1', 'test2', 'test3']}
+        onItemTap={onTapItem}
+      />
     </View>
   );
 }

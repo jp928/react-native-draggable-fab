@@ -1,5 +1,25 @@
 import { requireNativeComponent } from 'react-native';
 
-const Fab = requireNativeComponent('DraggableFab');
+type EmitEvent = {
+  nativeEvent: {
+    index: number;
+  };
+};
+
+export type FabProps = {
+  animateType?: LabelAnimation;
+  itemLabels?: String[];
+  onTapItem?: (event: EmitEvent) => void;
+};
+
+const Fab = requireNativeComponent<FabProps>('DraggableFab');
+
+export enum LabelAnimation {
+  Pop = 'Pop',
+  Fade = 'Fade',
+  SlideLeft = 'Slide Left',
+  SlideUp = 'Slide Up',
+  None = 'none',
+}
 
 export default Fab;
