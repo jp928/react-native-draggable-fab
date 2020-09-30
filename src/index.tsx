@@ -1,4 +1,5 @@
-import { requireNativeComponent } from 'react-native';
+import { requireNativeComponent, Platform, View } from 'react-native';
+import CoordinatorLayoutAndroid from './lib/CoordinatorLayoutAndroid';
 
 type EmitEvent = {
   nativeEvent: {
@@ -10,6 +11,8 @@ export type FabProps = {
   animateType?: LabelAnimation;
   itemLabels?: String[];
   onItemTap?: (event: EmitEvent) => void;
+  on?: boolean;
+  icon?: string;
 };
 
 const Fab = requireNativeComponent<FabProps>('DraggableFab');
@@ -22,4 +25,10 @@ export enum LabelAnimation {
   None = 'none',
 }
 
-export default Fab;
+const CoordinatorLayout = Platform.select({
+  // android: CoordinatorLayoutAndroid as typeof View,
+  android: CoordinatorLayoutAndroid,
+  ios: View,
+}) as typeof View;
+
+export { Fab, CoordinatorLayout };

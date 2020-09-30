@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Fab, { LabelAnimation } from 'react-native-draggable-fab';
+import {
+  LabelAnimation,
+  Fab,
+  CoordinatorLayout,
+} from 'react-native-draggable-fab';
 
 export default function App() {
   const [tappedItem, setTappedItem] = React.useState(0);
@@ -10,15 +14,30 @@ export default function App() {
     setTappedItem(nativeEvent.index);
   };
 
+  const onPress = (...params) => {
+    console.log(params);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Tapped Item: {tappedItem}</Text>
-      <Fab
-        animateType={LabelAnimation.SlideLeft}
-        itemLabels={['test1', 'test2', 'test3']}
-        onItemTap={onTapItem}
-      />
-    </View>
+    <CoordinatorLayout
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // backgroundColor: 'red',
+      }}
+    >
+      <View style={styles.container}>
+        <Text>Tapped Item: {tappedItem}</Text>
+        <Fab
+          animateType={LabelAnimation.SlideLeft}
+          itemLabels={['test1', 'test2', 'test3']}
+          onItemTap={onTapItem}
+          icon="directions"
+          // onPress={onPress}
+        />
+      </View>
+    </CoordinatorLayout>
   );
 }
 
