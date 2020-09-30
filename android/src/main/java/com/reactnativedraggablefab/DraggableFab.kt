@@ -1,15 +1,17 @@
 package com.reactnativedraggablefab
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
+import android.content.res.ColorStateList
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.net.URL
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
@@ -21,7 +23,7 @@ class DraggableFab(context: Context): FloatingActionButton(context) {
   private var downRawY: Float = 0F
   private var dx: Float = 0F
   private var dy: Float = 0F
-
+  private var icon: Drawable? = null
   private val ON_TOUCH_LISTENER = View.OnTouchListener { v: View, event: MotionEvent ->
       when (event.action) {
         MotionEvent.ACTION_DOWN -> {
@@ -86,14 +88,29 @@ class DraggableFab(context: Context): FloatingActionButton(context) {
     layoutParams.gravity = Gravity.BOTTOM or Gravity.RIGHT
     layoutParams.rightMargin = 140
     layoutParams.bottomMargin = 140
-    this.setLayoutParams(layoutParams)
-    this.setImageResource(R.drawable.ic_baseline_add_24)
-//    this.exp
-//    this.setOnTouchListener(ON_TOUCH_LISTENER)
+    setLayoutParams(layoutParams)
+
+//    setOnTouchListener(ON_TOUCH_LISTENER)
   }
 
-  public fun setIcon(uri: String) {
-    this.setIcon(uri)
+  fun setIcon(uri: String) {
+    try {
+      val url = URL(uri)
+      val bitmap = BitmapFactory.decodeStream(url.openStream())
+      icon = BitmapDrawable(resources, bitmap)
+      setImageDrawable(icon)
+      requestLayout()
+    } catch (e: Exception) {
+    }
   }
 
+  fun setBackground(color: Int) {
+    try {
+      backgroundTintList = ColorStateList.valueOf(color)
+    } catch (e: java.lang.Exception) {
+    }
+  }
+//  fun setBackground(color: int) {
+//    setBackgroundColor(color)
+//  }
 }

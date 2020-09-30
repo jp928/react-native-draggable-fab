@@ -59,12 +59,11 @@ class CoordinatorLayoutManager : ViewGroupManager<CoordinatorLayoutView>() {
     return true
   }
 
-  override fun addView(parent: CoordinatorLayoutView?, child: View?, index: Int) {
-    if (child is FloatingActionButton) {
-      container.addView(child)
-    } else {
-      super.addView(parent, child, index)
-    }
-
-  }
+  // override fun addView(parent: CoordinatorLayoutView?, child: View?, index: Int) {
+  //   if (child is FloatingActionButton) {
+  //     container.addView(child)
+  //   } else {
+  //     super.addView(parent, child, index)
+  //   }
+  // }
 }

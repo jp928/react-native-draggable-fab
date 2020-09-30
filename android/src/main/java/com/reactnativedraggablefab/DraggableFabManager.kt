@@ -1,5 +1,6 @@
 package com.reactnativedraggablefab
 
+import android.graphics.Color
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.facebook.react.bridge.ReactContext
@@ -17,10 +18,8 @@ class DraggableFabManager : SimpleViewManager<DraggableFab>() {
   private lateinit var fab: FloatingActionButton
 
   private val ON_CLICK_LISTENER = View.OnClickListener {
-    // Do whatever this button will do on click event
-//    Log.d("Fab", "HELLO WORLD")
     val event = Arguments.createMap()
-   (it.context as ReactContext).getJSModule(RCTEventEmitter::class.java).receiveEvent(it.getId(), "topChange", event)
+    (it.context as ReactContext).getJSModule(RCTEventEmitter::class.java).receiveEvent(it.getId(), "topChange", event)
   }
 
   override fun getName(): String {
@@ -34,10 +33,16 @@ class DraggableFabManager : SimpleViewManager<DraggableFab>() {
     return fab
   }
 
-//  @ReactProp(name = "icon")
-//  fun setIcon(view: DraggableFab, uri: String?) {
-//    if (uri != null) {
-//      view.setIcon(uri)
-//    }
-//  }
+  @ReactProp(name = "icon")
+  fun setIcon(view: DraggableFab, uri: String) {
+    view.setIcon(uri)
+  }
+
+  @ReactProp(name = "backgroundColor")
+  public fun setBackground(view: DraggableFab, background: String) {
+      val color = Color.parseColor(background);
+//      view.setBackgroundDefault(color);
+      view.setBackground(color);
+//      toggleFab(view);
+  }
 }
