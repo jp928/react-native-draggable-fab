@@ -6,6 +6,9 @@
 
 RCT_EXPORT_VIEW_PROPERTY(animateType, NSString)
 RCT_EXPORT_VIEW_PROPERTY(itemLabels, NSArray)
+RCT_EXPORT_VIEW_PROPERTY(backgroundColors, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(onItemTap, RCTDirectEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onOpen, RCTDirectEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(fabColor, NSString)
 
 @end

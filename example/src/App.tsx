@@ -17,7 +17,7 @@ export default function App() {
   };
 
   const onPress = (...params) => {
-    console.log(params);
+    console.log('======>>>>', params);
   };
 
   return (
@@ -31,7 +31,7 @@ export default function App() {
         <IconMDI name="add" size={42} color="#000" />
         <Fab
           animateType={LabelAnimation.SlideLeft}
-          itemLabels={['test1', 'test2', 'test3']}
+          itemLabels={['']}
           onItemTap={onTapItem}
           icon="atm"
           onPress={onPress}
