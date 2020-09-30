@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libDraggableFab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDraggableFab.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		449CB7742521AF3E00851F06 /* FabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabView.swift; sourceTree = "<group>"; };
+		44CCB2B12524955700695B25 /* DragableFabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableFabView.swift; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* DraggableFab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableFab.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* DraggableFab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DraggableFab-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* DraggableFab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableFab.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				449CB7742521AF3E00851F06 /* FabView.swift */,
+				44CCB2B12524955700695B25 /* DragableFabView.swift */,
 				F4FF95D6245B92E800C19C63 /* DraggableFab.swift */,
 				B3E7B5891CC2AC0600A0062D /* DraggableFab.m */,
 				F4FF95D5245B92E700C19C63 /* DraggableFab-Bridging-Header.h */,
