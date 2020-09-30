@@ -5,9 +5,8 @@ import CoordinatorLayoutAndroid from './lib/CoordinatorLayoutAndroid';
 import Fab, { LabelAnimation } from './lib/DraggableFab';
 
 const CoordinatorLayout = Platform.select({
-  // android: CoordinatorLayoutAndroid as typeof View,
   android: CoordinatorLayoutAndroid,
   ios: View,
-}) as typeof View;
+});
 
 export { Fab, CoordinatorLayout, LabelAnimation };

@@ -11,12 +11,12 @@ import IconMDI from 'react-native-vector-icons/MaterialIcons';
 export default function App() {
   const [tappedItem, setTappedItem] = React.useState(0);
 
-  const onTapItem = ({ nativeEvent }) => {
+  const onTapItem = ({ nativeEvent }: any) => {
     console.log(nativeEvent);
     setTappedItem(nativeEvent.index);
   };
 
-  const onPress = (...params) => {
+  const onPress = (...params: any) => {
     console.log('======>>>>', params);
   };
 
