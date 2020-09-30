@@ -3,7 +3,7 @@ import Floaty
 @objc(DraggableFab)
 class DraggableFab: RCTViewManager, FloatyDelegate {
     var floaty = Floaty()
-    
+    var onChange: RCTDirectEventBlock?
     
     override func view() -> UIView! {
         floaty.isDraggable = true
@@ -14,6 +14,16 @@ class DraggableFab: RCTViewManager, FloatyDelegate {
     override static func requiresMainQueueSetup() -> Bool {
         return true
     }
+
+//    func floatyWillOpen(_ floaty: Floaty) {
+//      print("Floaty Will Open")
+//    }
+//
+//
+//    @objc(setOnChange:)
+//    public func setOnChange(onChange: RCTDirectEventBlock?) {
+//        self.onChange = onChange
+//    }
 }
 
 extension Floaty {    

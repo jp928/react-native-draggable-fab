@@ -24,11 +24,10 @@ export default function App() {
     <CoordinatorLayout
       style={{
         flex: 1,
-        // backgroundColor: 'red',
       }}
     >
       <View style={styles.container}>
-        <Text>Tapped Item!: {tappedItem}</Text>
+        <Text>Tapped Item: {tappedItem}</Text>
         <IconMDI name="add" size={42} color="#000" />
         <Fab
           animateType={LabelAnimation.SlideLeft}
@@ -50,7 +49,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
-    // backgroundColor: 'blue',
   },
 });
