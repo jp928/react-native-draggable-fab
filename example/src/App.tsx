@@ -7,7 +7,6 @@ import {
 } from 'react-native-draggable-fab';
 
 import IconMDI from 'react-native-vector-icons/MaterialIcons';
-
 export default function App() {
   const [tappedItem, setTappedItem] = React.useState(0);
 
@@ -31,13 +30,13 @@ export default function App() {
         <IconMDI name="add" size={42} color="#000" />
         <Fab
           animateType={LabelAnimation.SlideLeft}
-          itemLabels={['']}
+          itemLabels={['test1', 'test2', 'test3']}
           onItemTap={onTapItem}
           icon="atm"
           onPress={onPress}
           iconProvider={IconMDI}
           iconColor="#fff"
-          backgroundColor="#10395e"
+          backgroundColor="#000000"
         />
       </View>
     </CoordinatorLayout>
